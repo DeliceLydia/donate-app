@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import Button from "./Botton";
+import Button from "./BottonComp";
 
 
 const Started = () => {
