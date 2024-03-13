@@ -1,12 +1,16 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View, Dimensions } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import Button from "./BottonComp";
+import Button from "./Button";
+
+
+export const height = Dimensions.get("window").height
+const width = Dimensions.get("window").width
 
 
 const Welcome = () => {
     return (
-        <View style={{ paddingHorizontal: 30, paddingVertical: 30 }}>
+        <View style={{ paddingHorizontal: 30, paddingVertical: 30, height: height, width: width }}>
             <View style={{ paddingVertical: 50, }}>
                 <Image style={{ width: 300, height: 200, alignItems: 'center' }} source={require('../assets/welcom.png')} />
             </View>

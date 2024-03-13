@@ -1,11 +1,13 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
-import Button from "./BottonComp";
+import { Image, Text, TouchableOpacity, View,Dimensions } from "react-native";
+import Button from "./Button";
 
 
+export const height = Dimensions.get("window").height
+const width = Dimensions.get("window").width
 const Started = () => {
     return (
-        <View style={{ paddingHorizontal: 10, paddingVertical: 30, }}>
+        <View style={{ paddingHorizontal: 10, paddingVertical: 30,  width: width, height: height}}>
 
             <View style={{ paddingVertical: 50, paddingHorizontal: 26 }}>
 

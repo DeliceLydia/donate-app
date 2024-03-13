@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import Started from './components/GetStarted';
 import Welcome from './components/Welcome';
 import SignUp from './components/Register';
+import Congz from './components/Congratulation';
 
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
 
       {/* <Started/> */}
       {/* <Welcome/> */}
-      <SignUp/>
+      <Congz/>
 
       <StatusBar style="auto" />
 
