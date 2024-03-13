@@ -11,8 +11,8 @@ export default function App() {
 
       {/* <Started/> */}
       {/* <Welcome/> */}
-      <Register />
-      {/* <Login /> */}
+      {/* <Register /> */}
+      <Login />
       <StatusBar style="auto" />
 
     </View>

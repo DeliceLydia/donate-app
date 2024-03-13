@@ -6,12 +6,13 @@ import { Icon, CheckBox } from "react-native-elements";
 import { FIREBASE_AUTH } from "../FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import FlashMessage, { showMessage } from "react-native-flash-message";
-import validateForm from "../validations/validation";
 
-const Register = ({ navigation }) => {
+const Register = () => {
   <FlashMessage position="top" />;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setChecked] = useState(false);
 
@@ -21,6 +22,33 @@ const Register = ({ navigation }) => {
 
   const toggleCheckbox = () => {
     setChecked(!isChecked);
+  };
+  const validateForm = () => {
+    let valid = true;
+
+    const isValidEmail = (email) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    };
+
+    // Validate email
+    if (!email.trim()) {
+      setEmailError("Email is required");
+      valid = false;
+    } else if (!isValidEmail(email)) {
+      setEmailError("Invalid email format");
+      valid = false;
+    } else {
+      setEmailError("");
+    }
+    // Validate password
+    if (!password.trim()) {
+      setPasswordError("Password is required");
+      valid = false;
+    } else {
+      setPasswordError("");
+    }
+    return valid;
   };
 
   const handleSubmit = async () => {
@@ -48,7 +76,7 @@ const Register = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <FlashMessage position="top" />
-      <Pressable onPress={() => navigation.navigate("Home")} style={styles.img}>
+      <Pressable style={styles.img}>
         <Image
           source={require("../assets/wecare.png")}
           style={styles.image}
@@ -72,7 +100,9 @@ const Register = ({ navigation }) => {
         underlineColor="#fcfcfc"
         textColor="#eceeef"
         onChangeText={setEmail}
+        error={emailError}
       />
+      {emailError ? <Text style={styles.error}>{emailError}</Text> : null}
       <TextInput
         theme={{
           roundness: 20,
@@ -83,6 +113,8 @@ const Register = ({ navigation }) => {
         style={styles.input}
         textColor="#eceeef"
         placeholder="password"
+        secureTextEntry={!showPassword}
+        value={password}
         placeholderTextColor="gray"
         underlineColor="#fcfcfc"
         right={
@@ -92,9 +124,14 @@ const Register = ({ navigation }) => {
             color="#90959d"
           />
         }
-        onChangeText={setPassword}
+        onChangeText={(text) => {
+          setPassword(text);
+          setPasswordError('');
+        }}
+        error={passwordError}
       />
-      <View style={{flexDirection: 'row', marginRight: 250}}>
+       {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
+      <View style={{flexDirection: 'row', marginRight: 130}}>
         <CheckBox value={isChecked} onValueChange={toggleCheckbox} />
         <Text style={{marginTop: 15}}>Remember me</Text>
       </View>
@@ -150,7 +187,7 @@ const Register = ({ navigation }) => {
 
       <View style={styles.link}>
         <Text style={{ color: "#d6d7da" }}>Already have an account?</Text>
-        <Pressable onPress={() => navigation.navigate("login")}>
+        <Pressable>
           <Text style={{ color: "#66ce92" }}>Sign In</Text>
         </Pressable>
       </View>
