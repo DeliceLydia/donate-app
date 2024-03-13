@@ -6,18 +6,47 @@ import { Icon } from "react-native-elements";
 import { FIREBASE_AUTH } from "../FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import FlashMessage, { showMessage } from "react-native-flash-message";
-import validateForm from "../validations/validation";
 
 const Login = ({ navigation }) => {
   <FlashMessage position="top" />;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const auth =FIREBASE_AUTH
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const validateForm = () => {
+    let valid = true;
+
+    const isValidEmail = (email) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    };
+
+    // Validate email
+    if (!email.trim()) {
+      setEmailError("Email is required");
+      valid = false;
+    } else if (!isValidEmail(email)) {
+      setEmailError("Invalid email format");
+      valid = false;
+    } else {
+      setEmailError("");
+    }
+    // Validate password
+    if (!password.trim()) {
+      setPasswordError("Password is required");
+      valid = false;
+    } else {
+      setPasswordError("");
+    }
+    return valid;
   };
 
   const handleSubmit = async () => {
@@ -70,7 +99,9 @@ const Login = ({ navigation }) => {
         underlineColor="#fcfcfc"
         textColor="#eceeef"
         onChangeText={setEmail}
+        error={emailError}
       />
+      {emailError ? <Text style={styles.error}>{emailError}</Text> : null}
       <TextInput
         theme={{
           roundness: 20,
@@ -82,6 +113,8 @@ const Login = ({ navigation }) => {
         textColor="#eceeef"
         placeholder="password"
         placeholderTextColor="gray"
+        secureTextEntry={!showPassword}
+        value={password}
         underlineColor="#fcfcfc"
         right={
           <TextInput.Icon
@@ -91,7 +124,9 @@ const Login = ({ navigation }) => {
           />
         }
         onChangeText={setPassword}
+        error={passwordError}
       />
+       {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
       <Pressable onPress={handleSubmit} style={styles.get}>
         <Text
           style={{
