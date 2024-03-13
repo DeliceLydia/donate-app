@@ -11,12 +11,12 @@ import { NavigationContainer } from "@react-navigation/native";
 export default function App() {
   return (
     <View >
-      <NavigationContainer>
+      {/* <NavigationContainer>
         <StackNav />
-      </NavigationContainer>
+      </NavigationContainer> */}
 
 
-      {/* <Started/> */}
+      <Started/>
       {/* <Welcome/> */}
       {/* <Congz/> */}
 
