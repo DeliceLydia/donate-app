@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View, Dimensions } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import Button from "./Botton";
+import Button from "./Button";
 
 export const height = Dimensions.get("window").height
 const width = Dimensions.get("window").width
@@ -98,8 +98,8 @@ const Welcome = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-            </View>
-            );
+        </View>
+    );
 };
 
-            export default Welcome;
+export default Welcome;
