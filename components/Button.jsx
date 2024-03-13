@@ -1,32 +1,23 @@
 import * as React from "react";
-import { View,Text,StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 
-
-const Button = ({title}) =>{
-    return(
-        <TouchableOpacity style={styles.btn} >
-            <Text style={styles.btntext}>{title}</Text>
-        </TouchableOpacity>
-    )
-}
- export default Button;
-
- const styles = StyleSheet.create({
-    btn: {
-        backgroundColor:'#25c067',
-        height:50,
-        borderRadius:30,
-        marginTop:30
-        
-    },
-    btntext: {
-        textAlign:'center',
-        fontSize: 18, 
-        fontWeight: '400',
-        color:'whitesmoke',
-        paddingTop:10
-    },
-
- })
-
- 
+const Button = ({title}) => {
+  return (
+    <View
+      style={{
+        width: "100%",
+        backgroundColor: "#1ebb61",
+        marginTop: 20,
+        padding: 10,
+        marginLeft: "auto",
+        marginRight: "auto",
+        borderRadius: 20,
+      }}
+    >
+      <Text style={{ textAlign: "center", color: "#c3ebd6", fontSize: 18 }}>
+        {title}
+      </Text>
+    </View>
+  );
+};
+export default Button;
