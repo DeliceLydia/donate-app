@@ -14,6 +14,8 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const auth =FIREBASE_AUTH
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -21,7 +23,7 @@ const Login = ({ navigation }) => {
   const handleSubmit = async () => {
     if (validateForm()) {
       try {
-        await signInWithEmailAndPassword(FIREBASE_AUTH, email, password);
+        await signInWithEmailAndPassword(auth, email, password);
         showMessage({
           message: "successful",
           type: "success",
@@ -47,6 +49,7 @@ const Login = ({ navigation }) => {
         <Image
           source={require("../assets/wecare.png")}
           style={styles.image}
+          
           resizeMode="cover"
         />
       </Pressable>

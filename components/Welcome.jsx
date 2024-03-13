@@ -1,17 +1,18 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View,Dimensions } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Button from "./Botton";
 
-
+export const height = Dimensions.get("window").height
+const width = Dimensions.get("window").width
 const Welcome = () => {
     return (
-        <View style={{ paddingHorizontal: 30,paddingVertical: 30 }}>
-            <View style={{ paddingVertical: 50, }}>
-                <Image style={{ width: 300, height: 200, alignItems: 'center' }} source={require('../assets/welcom.png')} />
+        <View style={{ paddingHorizontal: 30,paddingVertical: 50,width:width,height:height}}>
+            <View style={{ paddingVertical: 50, display:'flex',alignItems: 'center',justifyContent:'center',alignItems:'center'}}>
+                <Image style={{ width: 400, height: 250,  }} source={require('../assets/welcom.png')} />
             </View>
 
-            <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center', }}>Let's you in</Text>
+            <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center',paddingVertical: 40 }}>Let's you in</Text>
             <View style={{ paddingVertical: 40}}>
                 <TouchableOpacity style={{ borderRadius: 10, borderWidth: 0.03, padding: 10, display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'center', gap: 10 }}>
                     <MaterialIcons name='facebook' size={32} color='#3b5e99' />

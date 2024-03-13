@@ -9,9 +9,9 @@ export default function App() {
   return (
     <View >
 
-      {/* <Started/> */}
+      <Started/>
       {/* <Welcome/> */}
-      <Register />
+      {/* <Register /> */}
       {/* <Login /> */}
       <StatusBar style="auto" />
 
