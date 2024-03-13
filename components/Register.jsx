@@ -7,7 +7,7 @@ import { FIREBASE_AUTH } from "../FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import FlashMessage, { showMessage } from "react-native-flash-message";
 
-const Register = () => {
+const Register = ({navigation}) => {
   <FlashMessage position="top" />;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -61,7 +61,7 @@ const Register = () => {
           duration: 1800,
         });
         setTimeout(() => {
-          navigation.navigate("Dashboard");
+          navigation.navigate("login");
         }, 3000);
       } catch (error) {
         showMessage({
@@ -187,7 +187,7 @@ const Register = () => {
 
       <View style={styles.link}>
         <Text style={{ color: "#d6d7da" }}>Already have an account?</Text>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate("login")}>
           <Text style={{ color: "#66ce92" }}>Sign In</Text>
         </Pressable>
       </View>
