@@ -20,7 +20,7 @@ const ForgetPW = () => {
                 </View>
 
                 <View style={{ paddingVertical: 30, display: 'flex', alignItems: 'center', justifyContent: 'center', alignItems: 'center' }}>
-                    <Image source={require('../assets/forget.png')} style={{ width: 300, height: 250 }} />
+                    <Image source={require('../assets/reset.png')} style={{ width: 300, height: 250 }} />
                 </View>
 
                 <Text style={{ fontSize: 15, fontWeight: '400', paddingVertical: 30 }}>Select which contact details should we use to reset password</Text>
