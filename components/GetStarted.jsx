@@ -1,5 +1,4 @@
 import React from "react";
-import { Image, Text, Pressable, View, Dimensions } from "react-native";
 import Button from "./Button";
 import { Image, Text, TouchableOpacity, View, Dimensions } from "react-native";
 
