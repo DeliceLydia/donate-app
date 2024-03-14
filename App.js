@@ -4,9 +4,10 @@ import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <StackNav />
-      <StatusBar style="auto" />
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <StackNav />
+    //   <StatusBar style="auto" />
+    // </NavigationContainer>
+    <FirstScree/>
   );
 }
