@@ -68,6 +68,7 @@ mode="offline"
      borderWidth:2,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50,borderBottomRightRadius:50,backgroundColor:"white",textColor:"black",fontWeight:'bold'}}
      theme={{colors:{primary:'white'}}}
      textColor='white'
+     right={<TextInput.Icon icon={'map-marker'} color='#cdcdcd' />}
      />
 
 <Text style={{fontSize:16,fontWeight:'bold',marginTop:10,marginBottom:10,marginLeft:30}}>Total Donation Required<Text style={{color:'red'}}>*</Text></Text>

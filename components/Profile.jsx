@@ -61,7 +61,7 @@ export default function Profile({ navigation }) {
                 }}
                 theme={{ colors: { primary: 'white' } }}
                 textColor='white'
-                right={<TextInput.Icon icon={'currency-usd'} color='#cdcdcd' />}
+                right={<TextInput.Icon icon={'phone'} color='#cdcdcd' />}
             />
 
             <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10, marginLeft: 30 }}>Gender<Text style={{ color: 'red' }}>*</Text></Text>
@@ -76,7 +76,7 @@ export default function Profile({ navigation }) {
                 }}
                 theme={{ colors: { primary: 'white' } }}
                 textColor='white'
-                right={<TextInput.Icon icon={'currency-usd'} color='#cdcdcd' />}
+                right={<TextInput.Icon icon={'menu-down'} color='#cdcdcd' />}
             />
             <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10, marginLeft: 30 }}>City<Text style={{ color: 'red' }}>*</Text></Text>
 
@@ -90,7 +90,7 @@ export default function Profile({ navigation }) {
                 }}
                 theme={{ colors: { primary: 'white' } }}
                 textColor='white'
-                right={<TextInput.Icon icon={'currency-usd'} color='#cdcdcd' />}
+                right={<TextInput.Icon icon={'map-marker'} color='#cdcdcd' />}
             />
 
             <Button title={"Continue"}/>
