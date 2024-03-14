@@ -12,10 +12,10 @@ export const StackNav = () => {
   return (
     <Stack.Navigator initialRouteName="start">
       <Stack.Screen name="start" component={Started} options={{ headerShown: false }}/>
-      <Stack.Screen name="welcome" component={Welcome} />
-      <Stack.Screen name="login" component={Login} />
-      <Stack.Screen name="register" component={Register} />
-      <Stack.Screen name="congratulation" component={Congz} />
+      <Stack.Screen name="welcome" component={Welcome} options={{ headerShown: false }} />
+      <Stack.Screen name="login" component={Login} options={{ headerShown: false }} />
+      <Stack.Screen name="register" component={Register}  options={{ headerShown: false }}/>
+      <Stack.Screen name="congratulation" component={Congz}  options={{ headerShown: false }}/>
     </Stack.Navigator>
   );
 };

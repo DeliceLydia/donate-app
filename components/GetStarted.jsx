@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, Pressable, View, Dimensions } from "react-native";
+import { Image, Text, Pressable, View, Dimensions,TouchableOpacity } from "react-native";
 import Button from "./Button";
 
 
@@ -10,14 +10,14 @@ const width = Dimensions.get("window").width;
 const Started = ({ navigation }) => {
 
     return (
-        <View style={{ paddingHorizontal: 30, paddingVertical: 50, width: width, height: height }}>
+        <View style={{ paddingHorizontal: 30, paddingVertical: 30, width: width, height: height }}>
 
-            <View style={{ paddingVertical: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', alignItems: 'center' }}>
+            <View style={{ paddingVertical: 30, display: 'flex', alignItems: 'center', justifyContent: 'center', alignItems: 'center' }}>
 
                 <Image style={{ width: 400, height: 270, }} source={require('../assets/getstarted.png')} />
 
             </View>
-            <View style={{ paddingVertical: 50 }}>
+            <View style={{ paddingVertical: 30 }}>
 
                 <Text style={{ textAlign: 'center', fontSize: 25, fontWeight: '800', color: '#64cd91', paddingVertical: 15, }}>Donate easily,quickly,right on target all over the world </Text>
                 <Text style={{ textAlign: 'center', fontSize: 16 }}>Welcome to Donate, where making a difference is easier than ever. With our app, you can donate easily,

@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View, Dimensions } from "react-native";
+import { Image, Text, TouchableOpacity, View, Dimensions,Pressable } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Button from "./Button";
 
@@ -7,15 +7,15 @@ export const height = Dimensions.get("window").height
 const width = Dimensions.get("window").width
 const Welcome = ({ navigation }) => {
     return (
-        <View style={{ paddingHorizontal: 30, paddingVertical: 50, width: width, height: height }}>
-            <View style={{ paddingVertical: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ paddingHorizontal: 30, paddingVertical: 30, width: width, height: height }}>
+            <View style={{ paddingVertical: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', alignItems: 'center' }}>
                 <Image style={{ width: 400, height: 250, }} source={require('../assets/welcom.png')} />
             </View>
 
             <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center', paddingVertical: 40 }}>Let's you in</Text>
-            <View style={{ paddingVertical: 40 }}>
+            <View >
 
-                <View style={{ paddingVertical: 40 }}>
+                <View style={{ paddingVertical: 20 }}>
                     <TouchableOpacity
                         style={{
                             borderRadius: 10,
