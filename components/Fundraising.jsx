@@ -91,7 +91,8 @@ mode="offline"
         fontSize: 18, 
         fontWeight: '400',
         color:'#25c067',
-        padding:10}}>Draft</Text>
+        padding:10}}
+        >{<TextInput.Icon icon={'arrow-right-bold'} color={'#25c067'} />}Draft</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={{backgroundColor:'#25c067',
