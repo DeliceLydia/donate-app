@@ -15,6 +15,8 @@ const Login = ({ navigation }) => {
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const auth =FIREBASE_AUTH
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -50,7 +52,7 @@ const Login = ({ navigation }) => {
   const handleSubmit = async () => {
     if (validateForm()) {
       try {
-        await signInWithEmailAndPassword(FIREBASE_AUTH, email, password);
+        await signInWithEmailAndPassword(auth, email, password);
         showMessage({
           message: "successful",
           type: "success",
@@ -76,6 +78,7 @@ const Login = ({ navigation }) => {
         <Image
           source={require("../assets/wecare.png")}
           style={styles.image}
+          
           resizeMode="cover"
         />
       </Pressable>
@@ -141,9 +144,11 @@ const Login = ({ navigation }) => {
           Sign In
         </Text>
       </Pressable>
+      <Pressable>
       <Text style={{ color: "#71d19a", marginTop: 20, marginBottom: 20 }}>
         Forgot password?
       </Text>
+      </Pressable>
       <Text style={{ color: "#8a8e95", fontWeight: "500" }}>
         Or continue with
       </Text>
@@ -179,7 +184,7 @@ const Login = ({ navigation }) => {
 
       <View style={styles.link}>
         <Text style={{ color: "#d6d7da" }}>Don't have an account?</Text>
-        <Pressable onPress={() => navigation.navigate("Register")}>
+        <Pressable onPress={() => navigation.navigate("register")}>
           <Text style={{ color: "#66ce92" }}>Sign Up</Text>
         </Pressable>
       </View>

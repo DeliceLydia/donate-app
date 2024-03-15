@@ -7,6 +7,7 @@ import Congz from './Congratulation';
 import ComingToAnEnd from "./ComingToEnd";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ForgetPW from "./ForgetPW";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ export const StackNav = () => {
           ),
         }}
         />
+      <Stack.Screen name="forget" component={ForgetPW}  options={{ headerShown: false }}/>
     </Stack.Navigator>
   );
 };
