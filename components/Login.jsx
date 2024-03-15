@@ -1,21 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { View, Image, Text, Pressable } from "react-native";
 import styles from "../styles/LoginStyle";
 import { TextInput } from "react-native-paper";
 import { Icon } from "react-native-elements";
-import { FIREBASE_AUTH } from "../FirebaseConfig";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { AuthContext } from "../context/AuthContext";
 import FlashMessage, { showMessage } from "react-native-flash-message";
 
 const Login = ({ navigation }) => {
-  <FlashMessage position="top" />;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
-  const auth =FIREBASE_AUTH
+  const { login } = useContext(AuthContext);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -29,7 +26,6 @@ const Login = ({ navigation }) => {
       return emailRegex.test(email);
     };
 
-    // Validate email
     if (!email.trim()) {
       setEmailError("Email is required");
       valid = false;
@@ -39,7 +35,7 @@ const Login = ({ navigation }) => {
     } else {
       setEmailError("");
     }
-    // Validate password
+
     if (!password.trim()) {
       setPasswordError("Password is required");
       valid = false;
@@ -52,12 +48,7 @@ const Login = ({ navigation }) => {
   const handleSubmit = async () => {
     if (validateForm()) {
       try {
-        await signInWithEmailAndPassword(auth, email, password);
-        showMessage({
-          message: "successful",
-          type: "success",
-          duration: 1800,
-        });
+        login(email, password);
         setTimeout(() => {
           navigation.navigate("Dashboard");
         }, 3000);
@@ -78,7 +69,6 @@ const Login = ({ navigation }) => {
         <Image
           source={require("../assets/wecare.png")}
           style={styles.image}
-          
           resizeMode="cover"
         />
       </Pressable>
@@ -97,7 +87,7 @@ const Login = ({ navigation }) => {
         placeholder="email"
         placeholderTextColor="gray"
         underlineColor="#fcfcfc"
-        textColor="#eceeef"
+        textColor="red"
         onChangeText={setEmail}
         error={emailError}
       />
@@ -110,7 +100,7 @@ const Login = ({ navigation }) => {
           },
         }}
         style={styles.input}
-        textColor="#eceeef"
+        textColor="red"
         placeholder="password"
         placeholderTextColor="gray"
         secureTextEntry={!showPassword}
@@ -126,7 +116,7 @@ const Login = ({ navigation }) => {
         onChangeText={setPassword}
         error={passwordError}
       />
-       {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
+      {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
       <Pressable onPress={handleSubmit} style={styles.get}>
         <Text
           style={{
@@ -145,9 +135,9 @@ const Login = ({ navigation }) => {
         </Text>
       </Pressable>
       <Pressable>
-      <Text style={{ color: "#71d19a", marginTop: 20, marginBottom: 20 }}>
-        Forgot password?
-      </Text>
+        <Text style={{ color: "#71d19a", marginTop: 20, marginBottom: 20 }}>
+          Forgot password?
+        </Text>
       </Pressable>
       <Text style={{ color: "#8a8e95", fontWeight: "500" }}>
         Or continue with
@@ -158,7 +148,7 @@ const Login = ({ navigation }) => {
             style={styles.iconStyle}
             name="facebook"
             type="font-awesome"
-            size={20}
+            size={25}
             backgroundColor="#277eff"
             color="#fff"
             padding={5}
