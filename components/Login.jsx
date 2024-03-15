@@ -144,9 +144,11 @@ const Login = ({ navigation }) => {
           Sign In
         </Text>
       </Pressable>
+      <Pressable>
       <Text style={{ color: "#71d19a", marginTop: 20, marginBottom: 20 }}>
         Forgot password?
       </Text>
+      </Pressable>
       <Text style={{ color: "#8a8e95", fontWeight: "500" }}>
         Or continue with
       </Text>
@@ -182,7 +184,7 @@ const Login = ({ navigation }) => {
 
       <View style={styles.link}>
         <Text style={{ color: "#d6d7da" }}>Don't have an account?</Text>
-        <Pressable onPress={() => navigation.navigate("Register")}>
+        <Pressable onPress={() => navigation.navigate("register")}>
           <Text style={{ color: "#66ce92" }}>Sign Up</Text>
         </Pressable>
       </View>
