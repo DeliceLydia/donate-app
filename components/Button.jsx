@@ -7,7 +7,7 @@ const Button = ({title}) => {
       style={{
         width: "100%",
         backgroundColor: "#1ebb61",
-        marginTop: 20,
+        marginTop: 30,
         padding: 10,
         marginLeft: "auto",
         marginRight: "auto",
