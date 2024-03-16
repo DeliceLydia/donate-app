@@ -1,12 +1,12 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/Ionicons';
 import { View,Text, TouchableOpacity, Image, Dimensions, ScrollView } from "react-native";
-// import { TextInput } from 'react-native-paper';
 import { TextInput, IconButton } from "react-native-paper";
 
 
 const height = Dimensions.get('window').height
 const width = Dimensions.get('window').width
+
 export default function  Fundraising({navigation}){
   return (
     <View style={{height:height,width:width,paddingHorizontal:10}}>
