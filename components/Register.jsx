@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { View, Image, Text, Pressable } from "react-native";
 import styles from "../styles/LoginStyle";
 import { TextInput } from "react-native-paper";
 import { Icon, CheckBox } from "react-native-elements";
-import { FIREBASE_AUTH } from "../FirebaseConfig";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { AuthContext } from "../context/AuthContext";
 import FlashMessage, { showMessage } from "react-native-flash-message";
 
 const Register = ({navigation}) => {
-  <FlashMessage position="top" />;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setChecked] = useState(false);
+  const {register} = useContext(AuthContext)
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -54,25 +53,24 @@ const Register = ({navigation}) => {
   const handleSubmit = async () => {
     if (validateForm()) {
       try {
-        await createUserWithEmailAndPassword(FIREBASE_AUTH, email, password);
-        showMessage({
-          message: "successful",
-          type: "success",
-          duration: 1800,
-        });
-        setTimeout(() => {
+        await register(email, password);
+        setTimeout(()=> {
           navigation.navigate("login");
-        }, 3000);
+        }, 3000)
+        showMessage({
+          message: "Registration successful!",
+          type: "success",
+          duration: 3600
+        });
       } catch (error) {
         showMessage({
-          message: "Failed",
+          message: "Registration failed. Please try again.",
           type: "danger",
-          duration: 1800,
+          duration: 3600
         });
       }
     }
   };
-
   return (
     <View style={styles.container}>
       <FlashMessage position="top" />
@@ -98,7 +96,7 @@ const Register = ({navigation}) => {
         placeholder="email"
         placeholderTextColor="gray"
         underlineColor="#fcfcfc"
-        textColor="#eceeef"
+        textColor="red"
         onChangeText={setEmail}
         error={emailError}
       />
@@ -111,7 +109,7 @@ const Register = ({navigation}) => {
           },
         }}
         style={styles.input}
-        textColor="#eceeef"
+        textColor="red"
         placeholder="password"
         secureTextEntry={!showPassword}
         value={password}
