@@ -1,31 +1,28 @@
+import React, { createContext, useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import React, { createContext, useState} from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FIREBASE_AUTH } from "../FirebaseConfig";
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-  const  [message,setMessage] = useState('')
+export const ThemeProvider = ({ children }) => {
+  const register = async (email, password) => {
+    try {
+      await createUserWithEmailAndPassword(FIREBASE_AUTH, email, password);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const login = async () => {
+    try {
+      await signInWithEmailAndPassword(FIREBASE_AUTH, email, password);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-    <AuthContext.Provider
-      value={{
-        message,
-        login: async (email, password) => {
-          try {
-            const response = await signInWithEmailAndPassword(
-              FIREBASE_AUTH,
-              email,
-              password,
-            );
-            console.log(response);
-            
-          } catch (error) {
-            console.log(error);
-            setMessage('invalid credential')
-          }
-        },
-      }}
-    >
+    <AuthContext.Provider value={{ register, login }}>
       {children}
     </AuthContext.Provider>
   );
