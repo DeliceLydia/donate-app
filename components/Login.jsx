@@ -134,7 +134,7 @@ const Login = ({ navigation }) => {
           Sign In
         </Text>
       </Pressable>
-      <Pressable>
+      <Pressable onPress={() => navigation.navigate("forget")}>
         <Text style={{ color: "#71d19a", marginTop: 20, marginBottom: 20 }}>
           Forgot password?
         </Text>
