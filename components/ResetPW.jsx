@@ -57,10 +57,12 @@ const ResetPW = ({ navigation }) => {
 
             </KeyboardAvoidingView>
             <View style={{ flexDirection: 'row', }}>
-                <CheckBox style={{ borderColor: "#1ebb61", borderWidth: 1 }} color={"#1ebb61"} />
+                <CheckBox 
+                checkedColor="#1ebb61"
+                 />
                 <Text style={{ marginTop: 15, }}>Remember me</Text>
             </View>
-            <Pressable style={{paddingVertical:50}} >
+            <Pressable  onPress={() => navigation.navigate("congratulation")} >
                 <Button title={'Save'} />
             </Pressable>
 

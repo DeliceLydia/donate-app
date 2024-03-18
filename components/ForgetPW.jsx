@@ -8,9 +8,9 @@ const height = Dimensions.get('screen').height
 const width = Dimensions.get('screen').width
 
 
-const ForgetPW = () => {
+const ForgetPW = ({navigation}) => {
     return (
-        <View style={{ paddingHorizontal: 20, paddingVertical: 70, backgroundColor: 'witesmoke', height: height, width: width }}>
+        <View style={{ paddingHorizontal: 20, paddingVertical: 70, height: height, width: width }}>
             <KeyboardAvoidingView behavior="position">
                 <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
 
@@ -39,7 +39,7 @@ const ForgetPW = () => {
                 </View>
                 <View style={{ height: 100 }}></View>
 
-                <Pressable style={{}}>
+                <Pressable onPress={() => navigation.navigate("verify")}>
                     <Button title={'Continue'} />
                 </Pressable>
 
