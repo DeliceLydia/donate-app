@@ -27,6 +27,7 @@ const Search = () => {
                     underlineColor="white"
                     placeholder="Select your country"
                     mode="flat"
+
                     left={<TextInput.Icon icon="search1" size={25} />}
                     style={styles.input}
                 />
@@ -43,8 +44,8 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        height: height,
-        width: width,
+        // height: height,
+        // width: width
         paddingHorizontal: 20,
         paddingVertical: 30
     },

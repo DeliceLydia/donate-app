@@ -1,4 +1,5 @@
-import React,{useState,useEffect}from "react";
+
+import React from "react";
 import { View, Text, Image, TouchableOpacity, StatusBar, Dimensions,StyleSheet } from 'react-native'
 import { CheckBox } from "react-native-elements";
 
@@ -41,13 +42,13 @@ export const Card = ({Cimg,Name}) => {
 
                 </TouchableOpacity>
                 </View>
+        
             </View>
             <StatusBar />
         </View>
 
     )
 }
-
 const styles = StyleSheet.create({
     checkbox: {
         width: 24,
@@ -69,7 +70,4 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
       },
-      
-    
-
 })

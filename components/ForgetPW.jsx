@@ -10,7 +10,7 @@ const width = Dimensions.get('screen').width
 
 const ForgetPW = ({navigation}) => {
     return (
-        <View style={{ paddingHorizontal: 20, paddingVertical: 70, height: height, width: width }}>
+        <View style={{ paddingHorizontal: 20, paddingVertical: 40, height: height, width: width }}>
             <KeyboardAvoidingView behavior="position">
                 <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
 
