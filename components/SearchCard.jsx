@@ -18,8 +18,6 @@ export const Card = ({Cimg,Name}) => {
             <View style={{
                 display: 'flex',
                 flexDirection: "row",
-                // justifyContent: "space-between",
-                // alignContent: 'center',
                 height: 90,
                 borderWidth: 2,
                 borderRadius: 10,

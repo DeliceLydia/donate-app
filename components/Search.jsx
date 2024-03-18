@@ -12,12 +12,12 @@ const Search = () => {
     return (
         <View style={styles.container} >
             <View style={{display:'flex',gap:30}}>
-                <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
+                {/* <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
 
                     <MaterialIcons name="arrow-back" size={25} color={"#1ebb61"} />
                     <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Select your country</Text>
 
-                </View>
+                </View> */}
                 <TextInput
                     theme={{
                         colors: {
