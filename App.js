@@ -13,15 +13,15 @@ import { Card } from "./components/SearchCard";
 export default function App() {
   return (
     <ThemeProvider>
-      {/* <NavigationContainer>
+      <NavigationContainer>
         <StackNav />
         <StatusBar style="auto" />
-      </NavigationContainer> */}
+      </NavigationContainer>
        {/* <ForgetPW/>  */}
        {/* <ResetPW/>  */}
        {/* <Fundraising/>  */} 
        {/* <Search/> */}
-       <Card/>
+       {/* <Card/> */}
 
        
    </ThemeProvider>
