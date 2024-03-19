@@ -11,10 +11,6 @@ export default function  Fundraising({navigation}){
   return (
     <View style={{height:height,width:width,paddingHorizontal:10}}>
       <ScrollView>
-      <View style={{display:'flex',flexDirection:'row',justifyContent:'flex-start',alignItems:'flex-start',marginTop:55,gap:20}} >
-        <Icon name='arrow-back' style={{color:'white',color:'#25c067',fontSize:20,marginTop:3,marginLeft:10}}/>
-       <Text style={{color:'black',fontSize:18,fontWeight:'bold'}}>Create New Fundraising</Text>
-    </View> 
 
     <View  >
     <Image
@@ -27,7 +23,7 @@ export default function  Fundraising({navigation}){
       
     <Image
       source={require('../assets/kids.jpg')}
-      style={{ borderRadius:10,marginTop:30,width:80,height:100}}
+      style={{ justifyContent:'center',alignItems:'center',borderRadius:10,marginTop:30,width:80,height:100}}
     />
      <Image
       source={require('../assets/kids.jpg')}
@@ -52,7 +48,7 @@ export default function  Fundraising({navigation}){
     mode="offline"
          label="Help African Children's Education"
          underlineColor="transparent"
-         style={{borderColor:"#25c067",
+         style={{borderColor:"#25c067",height: 40,
          borderWidth:2,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50,borderBottomRightRadius:50,backgroundColor:"white",textColor:"black",fontWeight:'bold'}}
          theme={{colors:{primary:'white'}}}
          textColor='white'
@@ -64,7 +60,7 @@ export default function  Fundraising({navigation}){
 mode="offline"
      label="Education"
      underlineColor="transparent"
-     style={{borderColor:"#25c067",
+     style={{borderColor:"#25c067", height: 40,
      borderWidth:2,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50,borderBottomRightRadius:50,backgroundColor:"white",textColor:"black",fontWeight:'bold'}}
      theme={{colors:{primary:'white'}}}
      textColor='white'
@@ -77,7 +73,7 @@ mode="offline"
 mode="offline"
      label="8200"
      underlineColor="transparent"
-     style={{borderColor:"#25c067",
+     style={{borderColor:"#25c067",height: 40,
      borderWidth:2,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50,borderBottomRightRadius:50,backgroundColor:"white",textColor:"black",fontWeight:'bold'}}
      theme={{colors:{primary:'white'}}}
      textColor='white'
