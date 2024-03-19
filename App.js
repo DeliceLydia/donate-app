@@ -1,19 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import { AppRegistry } from 'react-native';
 import { StackNav } from "./components/Navigation";
 import { NavigationContainer } from "@react-navigation/native";
-import { ThemeProvider } from "./context/AuthContext"
-import ForgetPW from "./components/ForgetPW";
-import ResetPW from "./components/ResetPW";
-import Fundraising from "./components/Fundraising";
-import Search from "./components/Search";
-import { Card } from "./components/SearchCard";
-import Started from "./components/GetStarted";
-import Welcome from "./components/Welcome";
+import { ThemeProvider } from "./context/AuthContext";
 
-
-
-export default function App() {
+const App = () => {
   return (
     <ThemeProvider>
       <NavigationContainer>
@@ -23,3 +13,5 @@ export default function App() {
    </ThemeProvider>
   );
 }
+
+export default App;
