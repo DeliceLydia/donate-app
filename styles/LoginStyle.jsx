@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
     borderRadius: 50,
     backgroundColor: "#fff",
-  },
+  }
 });
 
 export default styles;
