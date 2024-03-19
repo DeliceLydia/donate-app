@@ -140,9 +140,9 @@ const getItemLayout =(data,index) => ({
             />
             <View style={{ display:'flex',flexDirection:'row',gap:10,justifyContent:'center'}}>{renderDot()}</View>
             <View >
-                <TouchableOpacity>
+                <Pressable>
                     <Text style={{ textAlign: 'center', fontSize: 20, fontWeight: '700', color: '#64cd91', marginBottom: 10 }}>Skip</Text>
-                </TouchableOpacity>
+                </Pressable>
 
                 <Pressable onPress={() => navigation.navigate("welcome")}  >
                     <Button title="next" />
