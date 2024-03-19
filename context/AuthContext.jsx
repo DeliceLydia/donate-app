@@ -14,7 +14,7 @@ export const ThemeProvider = ({ children }) => {
     }
   };
 
-  const login = async () => {
+  const login = async (email, password) => {
     try {
       await signInWithEmailAndPassword(FIREBASE_AUTH, email, password);
     } catch (error) {
