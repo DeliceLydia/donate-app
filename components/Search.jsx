@@ -70,8 +70,6 @@ const Search = () => {
                         />
                     </TouchableOpacity>
                 )}
-                
-                
                 />
             </View>
             <StatusBar />
