@@ -23,7 +23,7 @@ export const StackNav = () => {
       <Stack.Screen name="congratulation" component={Congz} />
       <Stack.Screen name="forget" component={ForgetPW} />
       <Stack.Screen name="profile" component={Profile} />
-      <Stack.Screen name="Reset Password" component={ResetPW} />
+      <Stack.Screen name="Verify Password" component={ResetPW} />
       <Stack.Screen name="Forgot Password" component={Verify} />
       <Stack.Screen name="fundraising" component={Fundraising} />
     </Stack.Navigator>

@@ -96,8 +96,8 @@ mode="offline"
         >{<TextInput.Icon icon={'arrow-right-bold'} color={'#25c067'} />}Draft</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{backgroundColor:'#25c067',
-        
+        <TouchableOpacity style={{
+        backgroundColor:'#25c067',
         width:250,
         borderRadius:30,
         marginTop:15
