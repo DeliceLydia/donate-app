@@ -27,8 +27,8 @@ export const StackNav = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen name="welcome" component={Welcome} />
-      <Stack.Screen name="login" component={Login} />
-      <Stack.Screen name="register" component={Register} />
+      <Stack.Screen name="Login" component={Login} options={{headerBackTitle: "jjjj",headerBackTitleStyle: {fontSize: 20,marginLeft:20,backgroundColor:'whitesmokes'},headerBackVisible: true, headerLeft: ()=> <View style={{paddingRight:20}}><Icon source='arrow-left' size={20} color="#25c067"/></View>}}/>
+      <Stack.Screen name="Register" component={Register} options={{headerBackTitle: "jjjj",headerBackTitleStyle: {fontSize: 20,marginLeft:20,backgroundColor:'whitesmokes'},headerBackVisible: true, headerLeft: ()=> <View style={{paddingRight:20}}><Icon source='arrow-left' size={20} color="#25c067"/></View>}}/>
       <Stack.Screen name="congratulation" component={Congz} />
       <Stack.Screen name="profile" component={Profile} />
       <Stack.Screen name="Reset Password" component={ResetPW} />
