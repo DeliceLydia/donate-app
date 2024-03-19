@@ -15,17 +15,17 @@ import Welcome from "./components/Welcome";
 
 export default function App() {
   return (
-    <ThemeProvider>
-      {/* <NavigationContainer>
+    <ThemeProvider >
+      <NavigationContainer>
         <StackNav />
         <StatusBar style="auto" />
-      </NavigationContainer> */}
+      </NavigationContainer>
        {/* <ForgetPW/>  */}
        {/* <ResetPW/>  */}
        {/* <Fundraising/>  */} 
        {/* <Search/> */}
        {/* <Card/> */}
-      <Started/>
+      {/* <Started/> */}
       {/* <Welcome/> */}
        
    </ThemeProvider>
