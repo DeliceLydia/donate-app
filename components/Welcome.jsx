@@ -7,12 +7,12 @@ export const height = Dimensions.get("window").height
 const width = Dimensions.get("window").width
 const Welcome = ({ navigation }) => {
     return (
-        <View style={{ paddingHorizontal: 30, paddingVertical: 30, width: width, height: height }}>
+        <View style={{ paddingHorizontal: 30,  width: width, height: height }}>
             <View style={{ paddingVertical: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', alignItems: 'center' }}>
                 <Image style={{ width: 400, height: 250, }} source={require('../assets/welcom.png')} />
             </View>
 
-            <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center', paddingVertical: 40 }}>Let's you in</Text>
+            <Text style={{ fontSize: 25, fontWeight: 'bold', textAlign: 'center', }}>Let's you in</Text>
             <View >
 
                 <View style={{ paddingVertical: 20 }}>

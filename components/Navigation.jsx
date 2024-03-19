@@ -1,5 +1,4 @@
 import React from "react";
-import Started from "./GetStarted";
 import Welcome from "./Welcome";
 import Login from './Login';
 import Register from './Register';
@@ -10,6 +9,7 @@ import ResetPW from "./ResetPW";
 import Verify from "./Verify";
 import Fundraising from "./Fundraising";
 import Profile from "./Profile";
+import Started from "./GetStarted";
 import { Icon } from "react-native-paper";
 import Donate from "./Donate"
 import { View } from "react-native";
@@ -26,7 +26,8 @@ export const StackNav = () => {
       <Stack.Screen name="congratulation" component={Congz} />
       <Stack.Screen name="forget" component={ForgetPW} />
       <Stack.Screen name="profile" component={Profile} />
-      <Stack.Screen name="reset" component={ResetPW} />
+      <Stack.Screen name="Reset Password" component={ResetPW} />
+      <Stack.Screen name="Forgot Password" component={ForgetPW} />
       <Stack.Screen name="verify" component={Verify} />
       <Stack.Screen name="Create New Fundraising" component={Fundraising} options={{headerBackTitle: "jjjj",headerBackTitleStyle: {fontSize: 20,marginLeft:20},headerBackVisible: true, headerLeft: ()=> <View style={{paddingRight:20}}><Icon source='arrow-left' size={20} color="#25c067"/></View>}}/>
       <Stack.Screen name="Donate" component={Donate} options={{headerBackTitle: "jjjj",headerBackTitleStyle: {fontSize: 20,marginLeft:20,backgroundColor:'whitesmokes'},headerBackVisible: true, headerLeft: ()=> <View style={{paddingRight:20}}><Icon source='arrow-left' size={20} color="#25c067"/></View>}}/>
