@@ -8,6 +8,9 @@ import ResetPW from "./components/ResetPW";
 import Fundraising from "./components/Fundraising";
 import Search from "./components/Search";
 import { Card } from "./components/SearchCard";
+import Started from "./components/GetStarted";
+import Welcome from "./components/Welcome";
+
 
 
 export default function App() {
@@ -21,8 +24,9 @@ export default function App() {
        {/* <ResetPW/>  */}
        {/* <Fundraising/>  */} 
        {/* <Search/> */}
-       <Card/>
-
+       {/* <Card/> */}
+      <Started/>
+      {/* <Welcome/> */}
        
    </ThemeProvider>
   );

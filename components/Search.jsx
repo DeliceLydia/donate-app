@@ -1,19 +1,23 @@
 import React from "react";
-import { Image, View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { Image, View, Text, TouchableOpacity, StyleSheet,Dimensions } from "react-native";
 import { Checkbox, TextInput, Icon } from 'react-native-paper';
 import { FontAwesome, MaterialIcons, Feather } from '@expo/vector-icons'
 import { StatusBar } from "react-native";
+
+
+const height = Dimensions.get('window').height
+const width = Dimensions.get('window').width
 
 const Search = () => {
     return (
         <View style={styles.container} >
             <View style={{display:'flex',gap:30}}>
-                <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
+                {/* <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
 
                     <MaterialIcons name="arrow-back" size={25} color={"#1ebb61"} />
                     <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Select your country</Text>
 
-                </View>
+                </View> */}
                 <TextInput
                     theme={{
                         colors: {
@@ -23,14 +27,11 @@ const Search = () => {
                     underlineColor="white"
                     placeholder="Select your country"
                     mode="flat"
-                    left={<TextInput.Icon icon="" size={25} />}
+
+                    left={<TextInput.Icon icon="search1" size={25} />}
                     style={styles.input}
                 />
-
             </View>
-
-
-
             <StatusBar />
         </View>
     )
