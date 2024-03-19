@@ -2,7 +2,6 @@ import React,{useEffect, useRef, useState} from "react";
 import { Image, Text, Pressable, View, Dimensions, FlatList,TouchableOpacity } from "react-native";
 import Button from "./Button";
 
-
 export const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
 
@@ -107,7 +106,6 @@ const getItemLayout =(data,index) => ({
                 <View style={{paddingVertical:20,display: 'flex',justifyContent:'center',alignContent:'center',alignItems:'center'}}>
 
                     <Image style={{ width: 400, height: 270, }} source={item.image} />
-
                 </View>
                 <View style={{ paddingVertical:40,paddingRight:23}}>
 
