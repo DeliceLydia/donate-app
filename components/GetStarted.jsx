@@ -48,7 +48,7 @@ const getItemLayout =(data,index) => ({
         {
             id: 2,
             image: require("../assets/logo.png"),
-            title: "Trust,Transparent and effective in sharing kindness",
+            title: "Trust,Transparent and effective ",
             text: "Welcome to Donate, where making a difference is easier than ever. ",
             text1:"With our app, you can donate easily quickly, and directly to causes  ",
             text2:"matter where you are in the world.Join us in making an impact right ."
@@ -56,7 +56,7 @@ const getItemLayout =(data,index) => ({
         {
             id: 3,
             image: require("../assets/logo.png"),
-            title: "Create your own fundraising and publish it to the world",
+            title: "Create your own fundraising and publish ",
             text: "Welcome to Donate, where making a difference is easier than ever. ",
             text1:"With our app, you can donate easily quickly, and directly to causes ",
             text2:"matter where you are in the world.Join us in making an impact right"
