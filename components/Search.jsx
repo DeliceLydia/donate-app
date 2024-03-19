@@ -56,20 +56,23 @@ const Search = () => {
                     style={styles.input}
                 />
             </View>
+            <Card/>
 
             <View>
+               
                 <FlatList
-                data={Search}
-                renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => handleSearch(item)}>
+                data={search}
+                renderItem={({item} ) => (
+                    // <TouchableOpacity onPress={() => handleSearch(item)}>
                         <Card 
-                        Cimg={item.flags}
+                        Cimg={item.flags.png}
                         Abbr={item.cca2}
-                        Name={item.name}
-
+                        Name={item.name.common}
+                       
                         />
-                    </TouchableOpacity>
+                    // </TouchableOpacity>
                 )}
+                keyExtractor={(item, index) => index.toString()}
                 />
             </View>
             <StatusBar />
