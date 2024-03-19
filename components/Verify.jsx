@@ -28,12 +28,9 @@ const Verify = () => {
             <Text style={{ fontSize: 15, paddingVertical: 50 ,fontWeight:'400'}}> s</Text>
                 
             </View>
-
-          
-
             </KeyboardAvoidingView>
 
-            <Pressable onPress={() => navigation.navigate("reset")}>
+            <Pressable onPress={() => navigation.navigate("Verify Password")}>
             <Button title={'Verify'} />
             </Pressable>
 

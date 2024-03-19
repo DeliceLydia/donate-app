@@ -102,7 +102,7 @@ const getItemLayout =(data,index) => ({
     }
     const renderItem = ({ item, index }) => {
         return (
-            <View style={{  paddingVertical:30}}>
+            <View style={{  width:width,height:height}}>
                 <View style={{paddingVertical:20,display: 'flex',justifyContent:'center',alignContent:'center',alignItems:'center'}}>
 
                     <Image style={{ width: 400, height: 270, }} source={item.image} />
