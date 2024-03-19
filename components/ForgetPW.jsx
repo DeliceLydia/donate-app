@@ -8,16 +8,16 @@ const height = Dimensions.get('screen').height
 const width = Dimensions.get('screen').width
 
 
-const ForgetPW = () => {
+const ForgetPW = ({navigation}) => {
     return (
-        <View style={{ paddingHorizontal: 20, paddingVertical: 70, backgroundColor: 'witesmoke', height: height, width: width }}>
+        <View style={{ paddingHorizontal: 20, paddingVertical: 40, height: height, width: width }}>
             <KeyboardAvoidingView behavior="position">
-                <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
+                {/* <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
 
                     <MaterialIcons name="arrow-back" size={25} color={"#1ebb61"} />
                     <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Forgot Password</Text>
 
-                </View>
+                </View> */}
 
                 <View style={{ paddingVertical: 30, display: 'flex', alignItems: 'center', justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={require('../assets/reset.png')} style={{ width: 300, height: 250 }} />
@@ -39,7 +39,7 @@ const ForgetPW = () => {
                 </View>
                 <View style={{ height: 100 }}></View>
 
-                <Pressable style={{}}>
+                <Pressable onPress={() => navigation.navigate("verify")}>
                     <Button title={'Continue'} />
                 </Pressable>
 

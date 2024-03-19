@@ -50,7 +50,7 @@ const Login = ({ navigation }) => {
       try {
         login(email, password);
         setTimeout(() => {
-          navigation.navigate("Dashboard");
+          navigation.navigate("fundraising");
         }, 3000);
       } catch (error) {
         showMessage({
@@ -65,7 +65,7 @@ const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <FlashMessage position="top" />
-      <Pressable onPress={() => navigation.navigate("Home")} style={styles.img}>
+      <Pressable onPress={() => navigation.navigate("home")} style={styles.img}>
         <Image
           source={require("../assets/wecare.png")}
           style={styles.image}
@@ -117,6 +117,7 @@ const Login = ({ navigation }) => {
         error={passwordError}
       />
       {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
+      
       <Pressable onPress={handleSubmit} style={styles.get}>
         <Text
           style={{
@@ -134,7 +135,7 @@ const Login = ({ navigation }) => {
           Sign In
         </Text>
       </Pressable>
-      <Pressable>
+      <Pressable onPress={() => navigation.navigate("forget")}>
         <Text style={{ color: "#71d19a", marginTop: 20, marginBottom: 20 }}>
           Forgot password?
         </Text>

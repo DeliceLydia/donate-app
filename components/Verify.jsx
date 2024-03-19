@@ -8,16 +8,16 @@ const height = Dimensions.get('screen').height
 const width = Dimensions.get('screen').width
 const Verify = () => {
     return (
-        <View style={{ paddingHorizontal: 20, paddingVertical: 70, backgroundColor: 'witesmoke', height: height, width: width }}>
-            <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
+        <View style={{ flex:1,justifyContent:'space-between',alignContent:'center',paddingHorizontal: 20, paddingVertical: 40, height: height, width: width }}>
+            {/* <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
                 <MaterialIcons name="arrow-back" size={25} color={"#1ebb61"} />
                 <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Forgot Password</Text>
 
-            </View>
-            <KeyboardAvoidingView behavior="height" style={{flex:1,justifyContent:"center",alignItems:'center'}}>
+            </View> */}
+            <KeyboardAvoidingView behavior="height" style={{display:'flex',justifyContent:"center",alignItems:'center'}}>
             <Text style={{ fontSize: 15, paddingVertical: 50 ,fontWeight:'400'}}>Code have been sent to exp*********gmail.com</Text>
             <View style={{ display: "flex", flexDirection: 'row', gap: 10 }}>
-                <TextInput style={{ width:70,height:60,borderWidth: 1, borderRadius: 10,borderColor:'#1ebb61' }} />
+                <TextInput style={{width:70,height:60,borderWidth: 1, borderRadius: 10,borderColor:'#1ebb61' }} />
                 <TextInput style={{width:70,height:60, borderWidth: 1, borderRadius: 10,borderColor:'#1ebb61' }} />
                 <TextInput style={{width:70,height:60, borderWidth: 1, borderRadius: 10,borderColor:'#1ebb61' }} />
                 <TextInput style={{width:70,height:60, borderWidth: 1, borderRadius: 10,borderColor:'#1ebb61'}} />
@@ -33,7 +33,7 @@ const Verify = () => {
 
             </KeyboardAvoidingView>
 
-            <Pressable>
+            <Pressable onPress={() => navigation.navigate("reset")}>
             <Button title={'Verify'} />
             </Pressable>
 

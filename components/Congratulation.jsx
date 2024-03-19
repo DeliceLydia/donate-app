@@ -38,7 +38,7 @@ const Congz = ({navigation}) => {
         Your account is ready to use
       </Text>
       <View style={{ height: 140 }}></View>
-      <Pressable onPress={() => navigation.navigate("Dashboard")}>
+      <Pressable onPress={() => navigation.navigate("fundraising")}>
       <Button title={"Go to Home Page"}/>
       </Pressable>
      
