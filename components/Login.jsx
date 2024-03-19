@@ -50,7 +50,7 @@ const Login = ({ navigation }) => {
       try {
         login(email, password);
         setTimeout(() => {
-          navigation.navigate("fundraising");
+          navigation.navigate("Urgent Fundraising");
         }, 3000);
       } catch (error) {
         showMessage({
