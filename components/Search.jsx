@@ -3,7 +3,8 @@ import { Image, View, Text, TouchableOpacity, StyleSheet,Dimensions, FlatList } 
 import { Checkbox, TextInput, Icon } from 'react-native-paper';
 import { FontAwesome, MaterialIcons, Feather } from '@expo/vector-icons'
 import { StatusBar } from "react-native";
-import { Card } from "./SearchCard";
+import { Card,Countries } from "./SearchCard";
+import { CheckBox } from "react-native-elements";
 
 
 const height = Dimensions.get('window').height
@@ -34,7 +35,8 @@ const Search = () => {
     
     return (
         <View style={styles.container} >
-            <View style={{display:'flex',gap:30}}>
+            <View style={{}}>
+               
                 <TextInput
                     theme={{
                         colors: {
@@ -50,24 +52,27 @@ const Search = () => {
                     style={styles.input}
                 />
             </View>
-            <Card/>
 
             <View>
                
                 <FlatList
                 data={search}
                 renderItem={({item} ) => (
-                    <Card 
+                        <Card 
                         Cimg={item.flags.png}
                         Abbr={item.cca2}
                         Name={item.name.common}
-                       
                         />
                 )}
                 keyExtractor={(item, index) => index.toString()}
                 />
-                
             </View>
+            <View>
+            <Countries/>
+
+            </View>
+                   
+             
             <StatusBar />
         </View>
     )
@@ -77,15 +82,11 @@ export default Search;
 const styles = StyleSheet.create({
 
     container: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
         height: height,
         width: width,
         paddingHorizontal: 20,
         paddingVertical: 30,
-        backgroundColor:'#FFFFFF',
-
+        backgroundColor:'#ffffff'
     },
     input: {
         width: "100%",
@@ -93,12 +94,12 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         borderWidth: 0.003,
         borderColor: '#f7f9fc',
+        backgroundColor:'#f4f6f9',
+        marginBottom: 20,
         borderTopRightRadius: 25,
         borderTopLeftRadius: 25,
-        backgroundColor:'#f5f6f8'
         
     }
-
 }
 
 )
