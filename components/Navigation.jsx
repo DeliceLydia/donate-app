@@ -21,7 +21,8 @@ const Stack = createNativeStackNavigator();
 
 export const StackNav = () => {
   return (
-    <Stack.Navigator initialRouteName="Select your country">
+    <Stack.Navigator initialRouteName="Create New Fundraising">
+   
       <Stack.Screen
         name="start"
         component={Started}
