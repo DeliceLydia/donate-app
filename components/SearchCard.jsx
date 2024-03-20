@@ -12,9 +12,8 @@ export const Card = ({ Cimg, Name, Abbr }) => {
     const toggleChecked = () => {
         setChecked(!checked);
     }
-
     return (
-        <View style={{ paddingVertical: 10, width: width, height: height }}>
+        <View style={{ paddingVertical: 10, width: width }}>
             <View style={{
                 flexDirection: "row",
                 height: 80,
@@ -26,78 +25,57 @@ export const Card = ({ Cimg, Name, Abbr }) => {
                 alignItems: 'center',
 
             }}>
-            <Image source={{ uri: Cimg }} style={{ width: "30%", height: 60,marginRight:10 }} />
-            <Text style={{ fontSize: 17, fontWeight: '200',}}>{Abbr}</Text>
-            <Text style={{ fontSize: 19, fontWeight: '600', marginLeft: 10 }}>{Name}</Text>
-           
-            <CheckBox
-                checked={checked}
-                onPress={toggleChecked}
-                checkedIcon="dot-circle-o"
-                uncheckedIcon="circle-o"
-                checkedColor="#1ebb61"
-                containerStyle={{ marginLeft: 'auto' }}
-            />
-            </View>
+                <Image source={{ uri: Cimg }} style={{ width: "30%", height: 60, marginRight: 10 }} />
+                <Text style={{ fontSize: 17, fontWeight: '200', }}>{Abbr}</Text>
+                <Text style={{ fontSize: 19, fontWeight: '600', marginLeft: 10 }}>{Name}</Text>
 
-            <StatusBar />
-        </View>
-
-    )
-}
-
-export const Countries = ({img,small,big}) => {
-
-    const Country = [
-        {
-            img: {uri:  "https://flagcdn.com/w320/bi.png"},
-            small: "Bi",
-            big: "Burundi"
-        },
-        {
-            img: {uri:  
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png"},
-            small: "AF",
-            big:"Afghanistan"
-        },
-        {
-            img: {uri:  "https://flagcdn.com/w320/tg.png"},
-            small: "tg",
-            big: "Togo"
-        },
-        {
-            img: {uri:  "https://flagcdn.com/w320/ke.png"},
-            small: "Ke",
-            big: "kenya"
-        },
-        {
-            img: {uri:  "https://flagcdn.com/w320/pk.png"},
-            small: "pk",
-            big: "Pakistan"
-        },
-        {
-            img: {uri:  "https://flagcdn.com/w320/ly.png"},
-            small: "Li",
-            big: "Libya"
-        },
-    ]
-
-    return(
-        <View style={{ width: width, height: height }}>
-           
-            {Country.map((item, index) => (
-            <View key={index} style={styles.card}>
-                <Image source={item.img} style={styles.image} />
-                <Text style={styles.text}>{item.small}</Text>
-                <Text style={styles.text1}>{item.big}</Text>
                 <CheckBox
+                    checked={checked}
+                    onPress={toggleChecked}
                     checkedIcon="dot-circle-o"
                     uncheckedIcon="circle-o"
                     checkedColor="#1ebb61"
                     containerStyle={{ marginLeft: 'auto' }}
                 />
             </View>
-        ))}
+            <StatusBar />
+        </View>
+    )
+}
+export const Countries = ({ img, small, big }) => {
+
+    const [search, setSearch] = useState([])
+
+    const handleSearch = () => {
+        fetch(`https://restcountries.com/v3.1/all`)
+            .then(response => response.json())
+            .then(response => {
+                setSearch(response)
+                // console.log(response[0].flags.png)
+            })
+            .catch(err => console.error(err));
+    }
+
+    useEffect(() => {
+        handleSearch()
+
+    }, [])
+    return (
+        <View style={{ width: width, height: height }}>
+
+            {search.map((item, index) => (
+                <View key={index} style={styles.card}>
+                    <Image source={{ uri: `${item.flags.png}` }} style={styles.image} />
+                    <Text style={styles.text}>{item.cca2}</Text>
+                    <Text style={styles.text1}>{item.name.common}</Text>
+                    <CheckBox
+                        checkedIcon="dot-circle-o"
+                        uncheckedIcon="circle-o"
+                        checkedColor="#1ebb61"
+                        containerStyle={{ marginLeft: 'auto' }}
+                    />
+                </View>
+            ))}
             <StatusBar />
         </View>
     )
