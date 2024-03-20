@@ -14,12 +14,7 @@ const width = Dimensions.get("window").width
 const ResetPW = ({ navigation }) => {
     return (
         <View behavior='position' style={Reset.container}>
-            {/* <View style={Reset.bar}>
-
-                <MaterialIcons name="arrow-back" size={25} color={"#1ebb61"} />
-                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Reset Password</Text>
-
-            </View> */}
+            
             <View style={Reset.Viewimg}>
                 <Image source={require('../assets/reset.png')} style={Reset.img} />
             </View>

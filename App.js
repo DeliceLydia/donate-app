@@ -5,7 +5,7 @@ import { ThemeProvider } from "./context/AuthContext";
 
 const App = () => {
   return (
-    <ThemeProvider>
+    <ThemeProvider >
       <NavigationContainer>
         <StackNav />
         <StatusBar style="auto" />
