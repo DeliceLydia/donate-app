@@ -1,3 +1,4 @@
+import React, {useEffect, useState} from "react";
 import {
   View,
   Image,
@@ -8,8 +9,24 @@ import {
 } from "react-native";
 import { TextInput } from "react-native-paper";
 import DonationTypes from "./DonationTypes";
+import { readData } from "../firestore/firebase";
 
 const UrgentFundraising = () => {
+  const [fundraisingData, setFundraisingData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await readData();
+        setFundraisingData(data);
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  
   return (
     <View>
       <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
@@ -47,94 +64,18 @@ const UrgentFundraising = () => {
             }}
             style={styles.cardImage}
           />
-          <View style={{ marginTop: 20 }}>
-            <Text
-              style={{ color: "#000", fontWeight: "bold", marginBottom: 5 }}
-            >
-              Help overcome malnutrition
-            </Text>
-            <Text>
-              <Text style={{ color: "#6bd19b" }}>$8755 </Text>
-              <Text>Funds raised from $10540</Text>
-            </Text>
+          <View style={styles.data}>
+          {fundraisingData&&fundraisingData.map((item, index) => (
+            <View key={index} style={styles.dataContainer}>
+              <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.category}>{item.category}</Text>
+              <Text style={styles.tDonation}>Total Donation: {item.Tdonation}</Text>
+              <Text>Donate</Text>
+            </View>
+          ))}
           </View>
         </View>
-        <View style={styles.card}>
-          <Image
-            source={{
-              uri: `https://www.shutterstock.com/image-photo/happy-african-male-doctor-examining-600nw-133030739.jpg`,
-            }}
-            style={styles.cardImage}
-          />
-          <View style={{ marginTop: 20 }}>
-            <Text
-              style={{ color: "#000", fontWeight: "bold", marginBottom: 5 }}
-            >
-              Help Improve Child Health
-            </Text>
-            <Text>
-              <Text style={{ color: "#6bd19b" }}>$2277 </Text>
-              <Text>Funds raised from $6310</Text>
-            </Text>
-          </View>
-        </View>
-        <View style={styles.card}>
-          <Image
-            source={{
-              uri: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4m4eLKFNjt3MSvij7ZUTdrAJf3dJ5CXeSmQ&usqp=CAU`,
-            }}
-            style={styles.cardImage}
-          />
-          <View style={{ marginTop: 20 }}>
-            <Text
-              style={{ color: "#000", fontWeight: "bold", marginBottom: 5 }}
-            >
-              Help Improve Healthy Food
-            </Text>
-            <Text>
-              <Text style={{ color: "#6bd19b" }}>$2277 </Text>
-              <Text>Funds raised from $6310</Text>
-            </Text>
-          </View>
-        </View>
-        <View style={styles.card}>
-          <Image
-            source={{
-              uri: `https://www.shutterstock.com/image-photo/happy-african-male-doctor-examining-600nw-133030739.jpg`,
-            }}
-            style={styles.cardImage}
-          />
-          <View style={{ marginTop: 20 }}>
-            <Text
-              style={{ color: "#000", fontWeight: "bold", marginBottom: 5 }}
-            >
-              Help Overcome Malnutrition
-            </Text>
-            <Text>
-              <Text style={{ color: "#6bd19b" }}>$2277 </Text>
-              <Text>Funds raised from $6310</Text>
-            </Text>
-          </View>
-        </View>
-        <View style={styles.card}>
-          <Image
-            source={{
-              uri: `https://www.shutterstock.com/image-photo/happy-african-male-doctor-examining-600nw-133030739.jpg`,
-            }}
-            style={styles.cardImage}
-          />
-          <View style={{ marginTop: 20 }}>
-            <Text
-              style={{ color: "#000", fontWeight: "bold", marginBottom: 5 }}
-            >
-              Help Improve Child Health
-            </Text>
-            <Text>
-              <Text style={{ color: "#6bd19b" }}>$2277 </Text>
-              <Text>Funds raised from $6310</Text>
-            </Text>
-          </View>
-        </View>
+       
       </ScrollView>
     </View>
   );
@@ -159,4 +100,22 @@ const styles = StyleSheet.create({
     height: 120,
     resizeMode: "cover",
   },
+  dataContainer: {
+    flex: 1,
+    marginLeft: 10,
+    justifyContent: "center",
+  },
+  title: {
+    fontSize: 16,
+    color: '#434952',
+    fontWeight: "bold",
+    marginBottom: 5,
+  },
+  category: {
+    fontSize: 14,
+    marginBottom: 5,
+  },
+  tDonation: {
+    fontSize: 14,
+  }
 });

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, Image, StatusBar, Dimensions, StyleSheet } from 'react-native'
 import { CheckBox } from "react-native-elements";
 
@@ -9,17 +10,21 @@ export const Card = ({ Cimg, Name, Abbr }) => {
 
     const [checked, setChecked] = useState(false);
     const [data, setData] = useState({ Name: "", Abbr: "", cimg: "" });
+    const [data, setData] = useState({ Name: "", Abbr: "", cimg: "" });
     const toggleChecked = () => {
         setChecked(!checked);
     }
     return (
+        <View style={{ paddingVertical: 10, width: width, height: height }}>
         <View style={{ paddingVertical: 10, width: width }}>
             <View style={{
                 flexDirection: "row",
                 height: 80,
+                height: 80,
                 width: '90%',
                 borderWidth: 2,
                 borderRadius: 20,
+                borderColor: '#1ebb61',
                 borderColor: '#1ebb61',
                 paddingLeft: 10,
                 alignItems: 'center',
