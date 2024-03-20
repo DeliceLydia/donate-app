@@ -21,7 +21,7 @@ const Stack = createNativeStackNavigator();
 
 export const StackNav = () => {
   return (
-    <Stack.Navigator initialRouteName="Donate">
+    <Stack.Navigator initialRouteName="Select your country">
       <Stack.Screen
         name="start"
         component={Started}

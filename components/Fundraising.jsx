@@ -8,9 +8,9 @@ import {
   ScrollView,
 } from "react-native";
 import { TextInput } from "react-native-paper";
-import {launchImageLibrary} from 'react-native-image-picker'
+// import {launchImageLibrary} from 'react-native-image-picker'
 import Button from "./Button";
-import { writeData } from "./firebase";
+// import { writeData } from "./firebase";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
@@ -55,15 +55,6 @@ export default function Fundraising({ navigation }) {
           />
         </View>
 
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: 16,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
     <View>
     <Text style={{fontSize:18,fontWeight:'bold',marginTop:10}}>Fundraising Details</Text>
 

@@ -5,8 +5,6 @@ import { FontAwesome, MaterialIcons, Feather } from '@expo/vector-icons'
 import { StatusBar } from "react-native";
 import { Card,Countries } from "./SearchCard";
 import { CheckBox } from "react-native-elements";
-import { Card,Countries } from "./SearchCard";
-import { CheckBox } from "react-native-elements";
 
 
 const height = Dimensions.get('window').height
@@ -37,8 +35,6 @@ const Search = () => {
     
     return (
         <View style={styles.container} >
-            <View style={{}}>
-               
             <View style={{}}>
                
                 <TextInput
@@ -78,9 +74,10 @@ const Search = () => {
              
             <StatusBar />
         </View>
-    )
-}
+    )}
+
 export default Search;
+
 
 const styles = StyleSheet.create({
 
@@ -98,7 +95,6 @@ const styles = StyleSheet.create({
         borderWidth: 0.003,
         borderColor: '#f7f9fc',
         backgroundColor:'#f4f6f9',
-        backgroundColor:'#f4f6f9',
         marginBottom: 20,
         borderTopRightRadius: 25,
         borderTopLeftRadius: 25,
@@ -107,3 +103,4 @@ const styles = StyleSheet.create({
 }
 
 )
+
