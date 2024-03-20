@@ -9,11 +9,7 @@ const width = Dimensions.get('screen').width
 const Verify = () => {
     return (
         <View style={{ flex:1,justifyContent:'space-between',alignContent:'center',paddingHorizontal: 20, paddingVertical: 40, height: height, width: width }}>
-            {/* <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
-                <MaterialIcons name="arrow-back" size={25} color={"#1ebb61"} />
-                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Forgot Password</Text>
-
-            </View> */}
+           
             <KeyboardAvoidingView behavior="height" style={{display:'flex',justifyContent:"center",alignItems:'center'}}>
             <Text style={{ fontSize: 15, paddingVertical: 50 ,fontWeight:'400'}}>Code have been sent to exp*********gmail.com</Text>
             <View style={{ display: "flex", flexDirection: 'row', gap: 10 }}>
