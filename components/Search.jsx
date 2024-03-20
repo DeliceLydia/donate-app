@@ -35,12 +35,6 @@ const Search = () => {
     return (
         <View style={styles.container} >
             <View style={{display:'flex',gap:30}}>
-                <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
-
-                    <MaterialIcons name="arrow-back" size={25} color={"#1ebb61"} />
-                    <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Select your country</Text>
-
-                </View>
                 <TextInput
                     theme={{
                         colors: {
@@ -63,17 +57,16 @@ const Search = () => {
                 <FlatList
                 data={search}
                 renderItem={({item} ) => (
-                    // <TouchableOpacity onPress={() => handleSearch(item)}>
-                        <Card 
+                    <Card 
                         Cimg={item.flags.png}
                         Abbr={item.cca2}
                         Name={item.name.common}
                        
                         />
-                    // </TouchableOpacity>
                 )}
                 keyExtractor={(item, index) => index.toString()}
                 />
+                
             </View>
             <StatusBar />
         </View>
@@ -90,18 +83,19 @@ const styles = StyleSheet.create({
         height: height,
         width: width,
         paddingHorizontal: 20,
-        paddingVertical: 30
+        paddingVertical: 30,
+        backgroundColor:'#FFFFFF',
+
     },
     input: {
         width: "100%",
-        height: 30,
+        height: 50,
         borderRadius: 25,
         borderWidth: 0.003,
         borderColor: '#f7f9fc',
-        padding: 10,
-        marginBottom: 20,
         borderTopRightRadius: 25,
         borderTopLeftRadius: 25,
+        backgroundColor:'#f5f6f8'
         
     }
 

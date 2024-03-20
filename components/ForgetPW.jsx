@@ -12,12 +12,6 @@ const ForgetPW = ({navigation}) => {
     return (
         <View style={{ paddingHorizontal: 20, paddingVertical: 40, height: height, width: width }}>
             
-                {/* <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
-
-                    <MaterialIcons name="arrow-back" size={25} color={"#1ebb61"} />
-                    <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Forgot Password</Text>
-
-                </View> */}
                 <KeyboardAvoidingView behavior="position" style={{flex:1}}>
 
                 <View style={{ paddingVertical: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', alignItems: 'center' }}>

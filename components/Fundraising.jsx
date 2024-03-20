@@ -68,16 +68,16 @@ mode="offline"
     </View>
     
     <View style={{display:'flex',flexDirection:'row',gap:20,marginBottom:15}}>
-    <TouchableOpacity style={{borderColor:"#25c067",
-     borderWidth:2,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50,borderBottomRightRadius:50,backgroundColor:"white",width:100,marginTop:15,textAlign:'center'}} >
-            <Text style={{ textAlign:'center',
-        fontSize: 18, 
-        fontWeight: '400',
-        color:'#25c067',
-        padding:10}}
-        >{<TextInput.Icon icon={'arrow-right-bold'} color={'#25c067'} />}Draft</Text>
-        </TouchableOpacity>
-
+      <TouchableOpacity style={{borderColor:"#25c067",
+        borderWidth:2,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50,borderBottomRightRadius:50,backgroundColor:"white",width:100,marginTop:15,textAlign:'center'}} >
+        <Text style={{ textAlign:'center',
+          fontSize: 18, 
+          fontWeight: '400',
+          color:'#25c067',
+          padding:10}}
+        >{<TextInput.Icon icon={'arrow-right-bold'} color={'#25c067'} />}Draft
+        </Text>
+      </TouchableOpacity>
         <TouchableOpacity style={{
         backgroundColor:'#25c067',
         width:250,
@@ -90,6 +90,7 @@ mode="offline"
         color:'whitesmoke',
         paddingTop:10}}>Create & Submit</Text>
         </TouchableOpacity>
+        </View>
         <View style={{ display: 'flex', flexDirection: 'row', gap: 16 ,justifyContent: 'center', alignItems: 'center'}}>
 
           <Image
@@ -172,6 +173,7 @@ mode="offline"
         </View>
       </ScrollView>
     </View>
+  
   )
 }
 
