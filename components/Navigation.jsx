@@ -72,8 +72,8 @@ export const BottomNav = () => {
       }
       return <Icon name={iconName} size={30} color={color} type="material-community"/>;
     },
-    tabBarActiveTintColor: '#25c067',
-    tabBarInactiveTintColor: 'black',
+    tabBarActiveTintColor: '',
+    tabBarInactiveTintColor: '#25c067',
     tabBarShowLabel: false,
     tabBarShowIcon: true,
     tabBarStyle: {
