@@ -58,7 +58,6 @@ export const BottomNav = () => {
       style = { background:"white"
 
     }}
-      
       let iconName;""
       if (route.name === "home") {
         iconName = focused ? "home" : "home-outline";
