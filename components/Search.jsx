@@ -1,5 +1,5 @@
 import React ,{useEffect,useState}from "react";
-import { Image, View, Text, TouchableOpacity, StyleSheet,Dimensions, FlatList } from "react-native";
+import { Image, View, Text, TouchableOpacity, StyleSheet,Dimensions, FlatList, ScrollView } from "react-native";
 import { Checkbox, TextInput, Icon } from 'react-native-paper';
 import { FontAwesome, MaterialIcons, Feather } from '@expo/vector-icons'
 import { StatusBar } from "react-native";
@@ -28,7 +28,7 @@ const Search = () => {
         .then(response => response.json())
         .then(response => {
             setSearch(response)
-            console.log(response)
+            // console.log(response)
         })
         .catch(err => console.error(err));
     }
@@ -67,17 +67,17 @@ const Search = () => {
                 keyExtractor={(item, index) => index.toString()}
                 />
             </View>
-            <View>
-            <Countries/>
-
-            </View>
+            <ScrollView>
+                 <Countries/>
+            </ScrollView>
                    
              
             <StatusBar />
         </View>
-    )
-}
+    )}
+
 export default Search;
+
 
 const styles = StyleSheet.create({
 
@@ -103,3 +103,4 @@ const styles = StyleSheet.create({
 }
 
 )
+

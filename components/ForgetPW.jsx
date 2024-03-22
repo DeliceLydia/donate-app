@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { View, Text, Pressable, Image, Dimensions, TextInput, KeyboardAvoidingView } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Button from "./Button";
@@ -9,6 +9,8 @@ const width = Dimensions.get('screen').width
 
 
 const ForgetPW = ({navigation}) => {
+
+    const [forget,setForget] = useState('')
     return (
         <View style={{ paddingHorizontal: 20, paddingVertical: 40, height: height, width: width }}>
             
@@ -27,6 +29,7 @@ const ForgetPW = ({navigation}) => {
 
                     <View style={{ marginTop: 20, }}>
                         <TextInput
+                            label='email'
                             placeholder="Enter your Email Address"
                         />
 
