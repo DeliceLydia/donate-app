@@ -12,11 +12,11 @@ const ForgetPW = ({navigation}) => {
 
     const [forget,setForget] = useState('')
     return (
-        <View style={{ paddingHorizontal: 20, paddingVertical: 40, height: height, width: width }}>
+        <View style={{ paddingHorizontal: 20, paddingVertical: 20, height: height, width: width }}>
             
                 <KeyboardAvoidingView behavior="position" style={{flex:1}}>
 
-                <View style={{ paddingVertical: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', alignItems: 'center' }}>
+                <View style={{display: 'flex', alignItems: 'center', justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={require('../assets/reset.png')} style={{ width: 300, height: 250 }} />
                 </View>
 
@@ -37,7 +37,7 @@ const ForgetPW = ({navigation}) => {
                 </View>
                 <View style={{ height: 100 }}></View>
 
-                <Pressable onPress={() => navigation.navigate("Forgot Password")}>
+                <Pressable onPress={() => navigation.navigate("Reset Password")}>
                     <Button title={'Continue'} />
                 </Pressable>
 

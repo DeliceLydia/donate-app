@@ -8,6 +8,7 @@ import {
   Pressable,
 } from "react-native";
 import { TextInput } from "react-native-paper";
+import Icon from "react-native-vector-icons/Ionicons";
 import Button from "./Button";
 import styles from "../styles/LoginStyle";
 
@@ -21,10 +22,30 @@ const Donate = ({ navigation }) => {
         height: height,
         width: width,
         paddingHorizontal: 10,
-        backgroundColor: "white",
+        paddingVertical: 20,
+        flex: 1,
+        
       }}
     >
-      <ScrollView>
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: 15,
+          marginTop: 30,
+        }}
+      >
+        <Icon
+          name="arrow-back"
+          style={{ color: "white", color: "#25c067", fontSize: 20 }}
+        />
+        <Text style={{ color: "black", fontSize: 18, fontWeight: "bold" }}>
+          Donate
+        </Text>
+      </View>
+      <View style={{justifyContent:'center',alignContent:'center',paddingVertical:30}}>
+
+      <ScrollView >
         <Text
           style={{
             fontSize: 18,
@@ -236,6 +257,8 @@ const Donate = ({ navigation }) => {
         </Pressable>
         
       </ScrollView>
+      </View>
+     
     </View>
   );
 }

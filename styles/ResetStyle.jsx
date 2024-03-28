@@ -3,8 +3,7 @@ import {StyleSheet} from 'react-native';
 
 const Reset= StyleSheet.create({
     container:{
-        paddingHorizontal: 20,
-        paddingVertical: 50,
+        paddingHorizontal: 20
 
     },
 bar:{

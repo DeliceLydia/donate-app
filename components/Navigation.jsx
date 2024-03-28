@@ -25,26 +25,26 @@ const Bottom = createBottomTabNavigator();
 
 export const StackNav = () => {
   return (
-    <Stack.Navigator initialRouteName="Select your country">
+    <Stack.Navigator initialRouteName="start">
       <Stack.Screen
         name="start"
         component={Started}
         options={{ headerShown: false }}
       />
       <Stack.Screen name="welcome" component={Welcome}/>
-      <Stack.Screen name="Login" component={Login} options={{ headerBackTitle: "jjjj", headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
-      <Stack.Screen name="Register" component={Register} options={{ headerBackTitle: "jjjj", headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
-      <Stack.Screen name="congratulation" component={Congz}/>
+      <Stack.Screen name="Login" component={Login} options={{ headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
+      <Stack.Screen name="Register" component={Register} options={{ headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
+      <Stack.Screen name="congratulation" component={Congz} />
       <Stack.Screen name="profile" component={Profile}/>
-      <Stack.Screen name="Verify Password" component={Verify} options={{ headerBackTitle: "jjjj", headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
+      <Stack.Screen name="Verify Password" component={Verify} options={{ headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
       <Stack.Screen name="fundraising" component={Fundraising}/>
-      <Stack.Screen name="Reset Password" component={ResetPW} options={{ headerBackTitle: "jjjj", headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
-      <Stack.Screen name="Forgot Password" component={ForgetPW} options={{ headerBackTitle: "jjjj", headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
+      <Stack.Screen name="Reset Password" component={ResetPW} options={{  headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
+      <Stack.Screen name="Forgot Password" component={ForgetPW} options={{ headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
       <Stack.Screen name="Coming to an End" component={ComingToAnEnd}/>
-      <Stack.Screen name="Urgent Fundraising" component={UrgentFundraising} options={{ headerBackTitle: "jjjj", headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
-      <Stack.Screen name="Select your country" component={BottomNav} options={{ headerBackTitle: "jjjj", headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
-      <Stack.Screen name="Create New Fundraising" component={Fundraising} options={{headerBackTitle: "jjjj", headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }}/>
-      <Stack.Screen name="Donate" component={Donate} options={{ headerBackTitle: "jjjj", headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }}/>
+      <Stack.Screen name="Urgent Fundraising" component={BottomNav} options={{ headerShown: false }}/>
+      <Stack.Screen name="Select your country" component={BottomNav} options={{  headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }} />
+      <Stack.Screen name="Create New Fundraising" component={Fundraising} options={{ headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }}/>
+      <Stack.Screen name="Donate" component={BottomNav} options={{  headerBackTitleStyle: { fontSize: 20, marginLeft: 20, backgroundColor: 'whitesmokes' }, headerBackVisible: true, headerLeft: () => <View style={{ paddingRight: 20 }}><Icon source='arrow-left' size={20} color="#25c067" /></View> }}/>
     </Stack.Navigator>
   );
 };
@@ -83,7 +83,7 @@ export const BottomNav = () => {
     }
   })}
 >
-<Bottom.Screen name="home" component={ComingToAnEnd} options={{headerShown:false}}/>
+<Bottom.Screen name="home" component={UrgentFundraising} options={{headerShown:false}}/>
 <Bottom.Screen name="donate" component={Donate} options={{headerShown:false}}/>
 <Bottom.Screen name="fundraising" component={Fundraising} options={{headerShown:false}}/>
 <Bottom.Screen name="search" component={Search} options={{headerShown:false}}/>
