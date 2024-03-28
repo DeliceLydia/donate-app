@@ -78,7 +78,7 @@ const Welcome = ({ navigation }) => {
                         Or
                     </Text>
 
-                    <Pressable onPress={() => navigation.navigate("login")}>
+                    <Pressable onPress={() => navigation.navigate("Login")}>
                         <Button title="Signin with password" />
                     </Pressable>
                     <View
@@ -92,7 +92,7 @@ const Welcome = ({ navigation }) => {
                         }}
                     >
                         <Text style={{ fontSize: 15 }}>Don't have an account?</Text>
-                        <Pressable onPress={() => navigation.navigate("register")}>
+                        <Pressable onPress={() => navigation.navigate("Register")}>
                             <Text style={{ fontSize: 15, color: "#64cd91" }}>Sign Up</Text>
                         </Pressable>
                     </View>

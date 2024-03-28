@@ -1,19 +1,10 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  Dimensions,
-  ScrollView,
-} from "react-native";
-import { TextInput } from "react-native-paper";
-// import {launchImageLibrary} from 'react-native-image-picker'
-import Button from "./Button";
-// import { writeData } from "./firebase";
 
-const height = Dimensions.get("window").height;
-const width = Dimensions.get("window").width;
+import React,{useState} from 'react'
+import Icon from 'react-native-vector-icons/Ionicons';
+import { View, Text, TouchableOpacity, Image, Dimensions, ScrollView } from "react-native";
+import { TextInput, IconButton } from "react-native-paper";
+import Button from "./Button";
+import { writeData } from './firebase'
 
 export default function Fundraising({ navigation }) {
   const [title, setTitle] = useState("");
@@ -41,103 +32,55 @@ export default function Fundraising({ navigation }) {
   };
 
   return (
-    <View style={{ height: height, width: width, paddingHorizontal: 10 }}>
+
+
+    <View style={{ height: height, width: width, paddingHorizontal: 10 ,paddingVertical:20}}>
+
+<View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: 15,
+          marginTop: 30,
+        }}
+      >
+        <Icon
+          name="arrow-back"
+          style={{ color: "white", color: "#25c067", fontSize: 20 }}
+        />
+        <Text style={{ color: "black", fontSize: 16, fontWeight: "bold" }}>
+          Create New Fundraising
+        </Text>
+      </View>
       <ScrollView>
         <View>
           <Image
             source={require("../assets/kids.jpg")}
             style={{
               borderRadius: 30,
-              width: "100%",
-              marginTop: 30,
+              width: 380,
               height: 200,
             }}
           />
         </View>
-
-    <View>
-    <Text style={{fontSize:18,fontWeight:'bold',marginTop:10}}>Fundraising Details</Text>
-
-    <Text style={{fontSize:16,fontWeight:'bold',marginTop:10,marginBottom:10,marginLeft:30}}>Title<Text style={{color:'red'}}>*</Text></Text>
-
-    <TextInput
-    mode="offline"
-         label="Help African Children's Education"
-         underlineColor="transparent"
-         style={{borderColor:"#25c067",
-         borderWidth:2,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50,borderBottomRightRadius:50,backgroundColor:"white",textColor:"black",fontWeight:'bold'}}
-         theme={{colors:{primary:'white'}}}
-         textColor='white'
-         />
-
-<Text style={{fontSize:16,fontWeight:'bold',marginTop:10,marginBottom:10,marginLeft:30}}>Category<Text style={{color:'red'}}>*</Text></Text>
-
-<TextInput
-mode="offline"
-     label="Education"
-     underlineColor="transparent"
-     style={{borderColor:"#25c067",
-     borderWidth:2,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50,borderBottomRightRadius:50,backgroundColor:"white",textColor:"black",fontWeight:'bold'}}
-     theme={{colors:{primary:'white'}}}
-     textColor='white'
-     right={<TextInput.Icon icon={'map-marker'} color='#cdcdcd' />}
-     />
-
-<Text style={{fontSize:16,fontWeight:'bold',marginTop:10,marginBottom:10,marginLeft:30}}>Total Donation Required<Text style={{color:'red'}}>*</Text></Text>
-
-<TextInput
-mode="offline"
-     label="8200"
-     underlineColor="transparent"
-     style={{borderColor:"#25c067",
-     borderWidth:2,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50,borderBottomRightRadius:50,backgroundColor:"white",textColor:"black",fontWeight:'bold'}}
-     theme={{colors:{primary:'white'}}}
-     textColor='white'
-     right={<TextInput.Icon icon={'currency-usd'} color='#cdcdcd' />}
-     />
-    </View>
     
-    <View style={{display:'flex',flexDirection:'row',gap:20,marginBottom:15}}>
-      <TouchableOpacity style={{borderColor:"#25c067",
-        borderWidth:2,borderTopLeftRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50,borderBottomRightRadius:50,backgroundColor:"white",width:100,marginTop:15,textAlign:'center'}} >
-        <Text style={{ textAlign:'center',
-          fontSize: 18, 
-          fontWeight: '400',
-          color:'#25c067',
-          padding:10}}
-        >{<TextInput.Icon icon={'arrow-right-bold'} color={'#25c067'} />}Draft
-        </Text>
-      </TouchableOpacity>
-        <TouchableOpacity style={{
-        backgroundColor:'#25c067',
-        width:250,
-        borderRadius:30,
-        marginTop:15
-        }} >
-            <Text style={{textAlign:'center',
-        fontSize: 18, 
-        fontWeight: '400',
-        color:'whitesmoke',
-        paddingTop:10}}>Create & Submit</Text>
-        </TouchableOpacity>
-        </View>
         <View style={{ display: 'flex', flexDirection: 'row', gap: 16 ,justifyContent: 'center', alignItems: 'center'}}>
 
           <Image
             source={require("../assets/kids.jpg")}
-            style={{ borderRadius: 10, marginTop: 30, width: 80, height: 100 }}
+            style={{ borderRadius: 10, marginTop: 10, width: 80, height: 80 }}
           />
           <Image
             source={require("../assets/kids.jpg")}
-            style={{ borderRadius: 10, marginTop: 30, width: 80, height: 100 }}
+            style={{ borderRadius: 10, marginTop: 10, width: 80, height: 80 }}
           />
           <Image
             source={require("../assets/kids.jpg")}
-            style={{ borderRadius: 10, marginTop: 30, width: 80, height: 100 }}
+            style={{ borderRadius: 10, marginTop: 10, width: 80, height: 80 }}
           />
           <Image
             source={require("../assets/kids.jpg")}
-            style={{ borderRadius: 10, marginTop: 30, width: 80, height: 100 }}
+            style={{ borderRadius: 10, marginTop: 10, width: 80, height: 80 }}
           />
         </View>
 
@@ -150,8 +93,8 @@ mode="offline"
             style={{
               fontSize: 16,
               fontWeight: "bold",
-              marginTop: 10,
-              marginBottom: 10,
+              marginTop: 7,
+              marginBottom: 5,
               marginLeft: 30,
             }}
           >
@@ -183,8 +126,8 @@ mode="offline"
             style={{
               fontSize: 16,
               fontWeight: "bold",
-              marginTop: 10,
-              marginBottom: 10,
+              marginTop: 7,
+              marginBottom: 5,
               marginLeft: 30,
             }}
           >
@@ -216,8 +159,8 @@ mode="offline"
             style={{
               fontSize: 16,
               fontWeight: "bold",
-              marginTop: 10,
-              marginBottom: 10,
+              marginTop: 7,
+              marginBottom: 5,
               marginLeft: 30,
             }}
           >
@@ -244,11 +187,6 @@ mode="offline"
             textColor="black"
             right={<TextInput.Icon icon={"currency-usd"} color="#cdcdcd" />}
           />
-          <TouchableOpacity onPress={selectImage}>
-            <Text>Select Image</Text>
-          </TouchableOpacity>
-
-          {/* Display selected image */}
           {image && (
             <Image
               source={{ uri: image }}
@@ -257,20 +195,15 @@ mode="offline"
           )}
         </View>
 
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: 20,
-            marginBottom: 15,
-          }}
-        >
+      
           <TouchableOpacity
-            onPress={() => writeData(title, category, tdonation, image)}
+            onPress={() => writeData(title, category, tdonation, image)
+            (navigation.navigate(''))}
           >
             <Button title={"Create & Submit"} />
+            
           </TouchableOpacity>
-        </View>
+        
       </ScrollView>
     </View>
   )

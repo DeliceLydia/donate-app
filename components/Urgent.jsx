@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Image,
@@ -10,6 +10,7 @@ import {
 import { TextInput } from "react-native-paper";
 import DonationTypes from "./DonationTypes";
 import { readData } from "../firestore/firebase";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const UrgentFundraising = () => {
   const [fundraisingData, setFundraisingData] = useState([]);
@@ -26,9 +27,27 @@ const UrgentFundraising = () => {
 
     fetchData();
   }, []);
-  
+
   return (
     <View>
+
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: 15,
+          marginTop: 30,
+          paddingVertical: 20,
+        }}
+      >
+        <Icon
+          name="arrow-back"
+          style={{ color: "white", color: "#25c067", fontSize: 20 ,marginLeft:5}}
+        />
+        <Text style={{ color: "black", fontSize: 18, fontWeight: "bold" }}>
+        Urgent Fundraising
+        </Text>
+      </View>
       <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
         <TextInput
           theme={{
@@ -65,17 +84,17 @@ const UrgentFundraising = () => {
             style={styles.cardImage}
           />
           <View style={styles.data}>
-          {fundraisingData&&fundraisingData.map((item, index) => (
-            <View key={index} style={styles.dataContainer}>
-              <Text style={styles.title}>{item.title}</Text>
-              <Text style={styles.category}>{item.category}</Text>
-              <Text style={styles.tDonation}>Total Donation: {item.Tdonation}</Text>
-              <Text>Donate</Text>
-            </View>
-          ))}
+            {fundraisingData && fundraisingData.map((item, index) => (
+              <View key={index} style={styles.dataContainer}>
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.category}>{item.category}</Text>
+                <Text style={styles.tDonation}>Total Donation: {item.Tdonation}</Text>
+                <Text>Donate</Text>
+              </View>
+            ))}
           </View>
         </View>
-       
+
       </ScrollView>
     </View>
   );

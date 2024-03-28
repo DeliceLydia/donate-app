@@ -55,7 +55,7 @@ const Register = ({navigation}) => {
       try {
         await register(email, password);
         setTimeout(()=> {
-          navigation.navigate("login");
+          navigation.navigate("Login");
         }, 3000)
         showMessage({
           message: "Registration successful!",
@@ -185,7 +185,7 @@ const Register = ({navigation}) => {
 
       <View style={styles.link}>
         <Text style={{ color: "#d6d7da" }}>Already have an account?</Text>
-        <Pressable onPress={() => navigation.navigate("login")}>
+        <Pressable onPress={() => navigation.navigate("Login")}>
           <Text style={{ color: "#66ce92" }}>Sign In</Text>
         </Pressable>
       </View>

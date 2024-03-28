@@ -10,7 +10,6 @@ const Congz = ({navigation}) => {
     <View
       style={{
         paddingHorizontal: 10,
-        paddingVertical: 160,
         width: width,
         height: height,
       }}
@@ -38,7 +37,7 @@ const Congz = ({navigation}) => {
         Your account is ready to use
       </Text>
       <View style={{ height: 140 }}></View>
-      <Pressable onPress={() => navigation.navigate("fundraising")}>
+      <Pressable onPress={() => navigation.navigate("Urgent Fundraising")}>
       <Button title={"Go to Home Page"}/>
       </Pressable>
      
