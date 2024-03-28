@@ -1,20 +1,10 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  Dimensions,
-  ScrollView,
-} from "react-native";
-import { TextInput } from "react-native-paper";
-import Icon from "react-native-vector-icons/Ionicons";
-// import {launchImageLibrary} from 'react-native-image-picker'
-import Button from "./Button";
-// import { writeData } from "./firebase";
 
-const height = Dimensions.get("window").height;
-const width = Dimensions.get("window").width;
+import React,{useState} from 'react'
+import Icon from 'react-native-vector-icons/Ionicons';
+import { View, Text, TouchableOpacity, Image, Dimensions, ScrollView } from "react-native";
+import { TextInput, IconButton } from "react-native-paper";
+import Button from "./Button";
+import { writeData } from './firebase'
 
 export default function Fundraising({ navigation }) {
   const [title, setTitle] = useState("");
